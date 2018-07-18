@@ -1,16 +1,10 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
-class CartPage extends Component {
-  render () {
-    return (
-      <div>
-        
-      </div>
-    )
-  }
+import Cart from './cart'
+
+export default function CartPage(props) {
+  return <div>
+    <h2>My Cart</h2>
+    <Cart />
+  </div>
 }
-
-CartPage.propTypes = {}
-
-export default CartPage
