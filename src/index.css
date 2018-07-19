@@ -29,3 +29,9 @@ body {
     width: 200px;
     height: 150px;
 }
+
+.total {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}

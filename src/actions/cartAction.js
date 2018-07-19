@@ -1,9 +1,6 @@
-// import axios from 'axios'
-// import { FETCH_RESTAURANTS_FAILURE, FETCH_RESTAURANTS_SUCCESS } from './loadItemAction'
+const cartWithoutItem = (cart, item) => cart.filter(cartItem => cartItem.name !== item.name)
 
-const cartWithoutItem = (cart, item) => cart.filter(cartItem => cartItem.id !== item.id)
-
-const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.id === item.id)[0]
+const itemInCart = (cart, item) => cart.filter(cartItem => cartItem.name === item.name)[0]
 
 // export const loadItems = () =>{
 //   axios.get('https://huddolapi-next.herokuapp.com/v1/challenge')
