@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Modal from 'react-responsive-modal';
 
 export default class InvoicePopup extends React.Component {
@@ -16,8 +16,6 @@ export default class InvoicePopup extends React.Component {
 
   render() {
     const {cart, total} = this.props
-    console.log(cart)
-    console.log(total)
     const {open} = this.state;
     return (
       <div>
@@ -31,7 +29,7 @@ export default class InvoicePopup extends React.Component {
                 cart.map((item, index) => {
                   return (
                     <li key={index}>
-                      {item.name}, ${item.price}, {item.quantity}, ${item.price * item.quantity}
+                      {item.name}, ${item.price.toFixed(2)}, {item.quantity}, ${(item.price * item.quantity).toFixed(2)}
                     </li>
                   )
                 })

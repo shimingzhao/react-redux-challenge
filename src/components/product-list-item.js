@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AddBtn from './add-btn'
 import RemoveBtn from './remove-btn'
 

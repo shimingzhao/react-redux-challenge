@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 import HomePage from './components/homepage'
 import CartPage from './components/cartpage'
