@@ -7,13 +7,13 @@ function ProductListing (props) {
   return (
     <div className='product-listing'>
       {
-        props.products.map((product, index) =>
+        props.items.map((item, index) =>
           <ProductListItem
-            product={product}
+            item={item}
             key={index}
-            addToCart={props.addToCart}
-            removeFromCart={props.removeFromCart}
-            cartItem={props.cart.filter(cartItem => cartItem.name === product.name)[0]}
+            addToOrder={props.addToOrder}
+            removeFromOrder={props.removeFromOrder}
+            orderItem={props.order.filter(orderItem => orderItem.itemid === item.itemid)[0]}
           />)
       }
     </div>
@@ -22,17 +22,20 @@ function ProductListing (props) {
 
 function mapStateToProps (state) {
   return {
-    cart: state.cart
+    order: state.orders.order
   }
 }
 
 function mapDispatchToProps (dispatch) {
   return {
-    addToCart: (item) => {
-      dispatch({type: 'ADD', payload: item})
+    addToOrder: (item) => {
+      dispatch({type: 'ADD_ITEM', payload: item})
     },
-    removeFromCart: (item) => {
-      dispatch({type: 'REMOVE', payload: item})
+    removeFromOrder: (item) => {
+      dispatch({type: 'REMOVE_ITEM', payload: item})
+    },
+    addOrder: (order) =>{
+      dispatch({type: 'ADD_ORDER', payload: order})
     }
   }
 }

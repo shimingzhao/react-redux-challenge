@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import ProductListing from './product-listing'
 import axios from 'axios'
+import { connect } from 'react-redux'
+import PlaceOrderBtn from './place-order-btn'
 
-export default class HomePage extends Component {
+class HomePage extends Component {
   state = {
     data: []
   }
@@ -22,11 +24,30 @@ export default class HomePage extends Component {
           return (
             <div key={res.id}>
               <h3>{res.id}: {res.name}</h3>
-              <ProductListing products={res.menu} />
+              <ProductListing items={res.menu} />
             </div>)}
         )}
+        <div>
+          <PlaceOrderBtn order={this.props.order} addOrder={this.props.addOrder} />
+        </div>
       </div>
     )
   }
 }
+
+function mapStateToProps (state) {
+  return {
+    orders: state.orders
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    addOrder: (order) =>{
+      dispatch({type: 'ADD_ORDER', payload: order})
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage)
 
