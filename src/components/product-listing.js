@@ -4,12 +4,14 @@ import { connect } from 'react-redux'
 import ProductListItem from './product-list-item'
 
 function ProductListing (props) {
+
   return (
     <div className='product-listing'>
       {
         props.items.map((item, index) =>
           <ProductListItem
             item={item}
+            storeName={props.store_name}
             key={index}
             addToOrder={props.addToOrder}
             removeFromOrder={props.removeFromOrder}
@@ -22,7 +24,7 @@ function ProductListing (props) {
 
 function mapStateToProps (state) {
   return {
-    order: state.orders.order
+    order: state.order
   }
 }
 

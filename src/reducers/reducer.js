@@ -2,18 +2,6 @@ import { addToOrder, removeFromOrder, removeAllFromOrder, addOrder, deleteOrder 
 
 const initialState = {
   orders: {
-    // order_id: '',
-    // order_date: '',
-    // order_total: 0,
-    // order_detail: [
-    //   {
-    //     item_id: '',
-    //     item_name: '',
-    //     item_price: 0,
-    //     item_quantity: 0,
-    //     restaurant_name: ''
-    //   }
-    // ]
     data: []
   }
 }

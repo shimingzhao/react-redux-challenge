@@ -4,6 +4,13 @@ import RemoveItemBtn from './remove-item-btn'
 import { connect } from 'react-redux'
 
 class ProductListItem (props) {
+
+  state = {
+    item_name: '',
+    item_price: 0,
+    item_store_name: props.storeName,
+  }
+
   return (
     <div className='product-list-item'>
       <h3>{props.item.itemid}-{props.item.name}</h3>
